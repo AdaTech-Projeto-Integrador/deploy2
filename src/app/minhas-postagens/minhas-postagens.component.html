@@ -9,7 +9,7 @@
       <div class="col-md-3 margem-top ">
         <!-----  criei a margim no css por causa da nav bar fixa  ---->
 
-        <div class="card arredondar btn-branco ">
+        <div class="card arredondar ">
           <div class=" d-flex justify-content-end  ">
             <a [routerLink]="['/usuario-edit/', idUsuario]">
               <p class="text-dark font-weight-bold fs-16 m-0">
@@ -43,7 +43,7 @@
 
           <!---publicar postagem--->
 
-          <div class="feed p-2" *ngFor="let item of usuario.postagem">
+          <div class="feed" *ngFor="let item of usuario.postagem">
             <div class="bg-white border arredondar">
               <div>
                 <div class="d-flex flex-row justify-content-between align-items-center p-2 border-bottom">

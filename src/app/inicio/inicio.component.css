@@ -23,6 +23,7 @@ display:block ;
 }
 
 
+
 .btn-branco {
   background: white;
   border-color: #102d38;
@@ -57,6 +58,7 @@ body {
 
 .arredondar {
   border-radius: 10px;
+  border-color: rgb(139, 139, 139);
 }
 
 .img-center{
@@ -64,10 +66,24 @@ body {
 
 }
 
+a:link {
+  text-decoration: none;
+ }
+
+a {
+  text-decoration: none;
+  color: #2D6073;
+ }
+
+ a:hover {
+  text-decoration: none;
+  color: #3896b8;
+ }
+
 
 .card-postar {
   border-radius: 10px;
-  width: 100%;
+  border-color: rgb(139, 139, 139);  width: 100%;
   padding: 20px;
   margin-top: 110px;
   margin-bottom: 50px

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';

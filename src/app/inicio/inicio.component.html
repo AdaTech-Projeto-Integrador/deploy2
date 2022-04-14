@@ -10,7 +10,7 @@
 
       <div class="col-md-3 margem-top ">
 
-        <div class="card arredondar btn-branco ">
+        <div class="card arredondar  ">
           <div class=" d-flex justify-content-end  ">
             <a [routerLink]="['/usuario-edit/', idUsuario]">
               <p class="text-dark font-weight-bold fs-16 m-0">
@@ -42,13 +42,13 @@
 
 
 
-      <div class="col-md-5 d-flex justify-content-between">
+      <div class="col-md-6 d-flex justify-content-between">
 
-        <div class="container-fluid ">
+        <div class="container-fluid">
 
           <!---publicar postagem--->
 
-          <div class=" card-postar btn-branco">
+          <div class=" card-postar btn-branco arredondar ">
             <div class="row px-3"> <img class="profile-pic mr-3" src="{{foto}}">
               <div class="flex-column">
                 <h3 class="mb-0 font-weight-normal">{{nome}}</h3>
@@ -64,7 +64,7 @@
             <div class="form-group">
               <label for="texto">Texto</label>
               <textarea (input)="validarTexto($event)" [(ngModel)]='postagem.texto' class="texto-post form-control" name="texto" id="texto"
-                rows="3"></textarea>
+                rows="3" placeholder="Digite o texto"></textarea>
             </div>
 
             <div class="form-group">
@@ -91,7 +91,7 @@
         </div>
 
       </div>
-      <div class="col-md-1">
+      <div class="col-md-3">
 
       </div>
     </div>
@@ -135,10 +135,10 @@
                 <div class="p-2 px-3"><span><b>Título: {{postagem.titulo}}</b></span></div>
                 <div class="p-2 px-3"><span>{{postagem.texto}}</span></div>
                 <button *ngIf="authService.adm()" [routerLink]="['/postagem-delete', postagem.id]" class="ml-3 mt-2 btn btn-danger">Apagar</button>
-                <div class="d-flex justify-content-end ">
-                  <i class="ml-4 mb-2 mt-2 mr-2 fa fa-thumbs-up"></i>
-                  <i class="ml-4 mb-2 mt-2  mr-2 fa fa-comments-o "></i>
-                  <i class="ml-4 mb-2 mt-2 mr-2 fa fa-share"></i>
+                <div class="d-flex justify-content-end  " >
+                  <a href="" class="ml-4 mb-2 mt-2 mr-2 fa fa-thumbs-up"> </a>
+                  <a href="" class="ml-4 mb-2 mt-2  mr-2 fa fa-comments-o "></a>
+                  <a href="" class="ml-4 mb-2 mt-2 mr-2 fa fa-share"></a>
                 </div>
               </div>
             </div>
