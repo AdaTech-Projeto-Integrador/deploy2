@@ -76,9 +76,9 @@
               </select>
             </div>
 
-
-            <button class="btn btn-info" *ngIf="authService.adm()" routerLink='/tema'>Cadastrar novo Tema</button>
             <div class="row px-3">
+            <button class="btn btn-branco " *ngIf="authService.adm()" routerLink='/tema'>Cadastrar novo Tema</button>
+
               <div class="btn btn-azul texto-branco ml-auto" (click)="publicar()">Publicar</div>
             </div>
           </div>
@@ -136,9 +136,9 @@
                 <div class="p-2 px-3"><span>{{postagem.texto}}</span></div>
                 <button *ngIf="authService.adm()" [routerLink]="['/postagem-delete', postagem.id]" class="ml-3 mt-2 btn btn-danger">Apagar</button>
                 <div class="d-flex justify-content-end  " >
-                  <a href="" class="ml-4 mb-2 mt-2 mr-2 fa fa-thumbs-up"> </a>
-                  <a href="" class="ml-4 mb-2 mt-2  mr-2 fa fa-comments-o "></a>
-                  <a href="" class="ml-4 mb-2 mt-2 mr-2 fa fa-share"></a>
+                  <a [routerLink]="['/inicio']" class="ml-4 mb-2 mt-2 mr-2 fa fa-thumbs-up"> </a>
+                  <a [routerLink]="['/inicio']" class="ml-4 mb-2 mt-2  mr-2 fa fa-comments-o "></a>
+                  <a [routerLink]="['/inicio']" class="ml-4 mb-2 mt-2 mr-2 fa fa-share"></a>
                 </div>
               </div>
             </div>

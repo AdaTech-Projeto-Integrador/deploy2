@@ -9,6 +9,18 @@
 
 }
 
+.nav-link{
+  color:black
+}
+
+.btn-branco {
+  background: #ffffff;
+  border-radius: 50px;
+  padding: 4px 40px
+}
+
+
+
 .margem-top {
   margin-top: 75px;
 
@@ -60,13 +72,13 @@ text-align: center;
 
 
 .bg-azul {
-background: #2d6073;
+  background-color: #1f192f
 }
 
 /*margem do logo*/
 .t{
   margin-top:81px;
-  
+
 }
 /*backgroud do logo*/
 .b{

@@ -1,112 +1,105 @@
 <div id="body">
 
-    <div class="container-fluid vertical-center">
+  <div class="container-fluid vertical-center">
 
-        <div class="row">
+      <div class="row">
 
-            <div class="col-md-6 mt-5 mb-5">
+          <div class="col-md-6 mt-5 mb-5 ">
 
-                <div class="row d-flex justify-content-center">
+              <div class="row d-flex justify-content-center">
 
-                    <div class="col-md-9">
-                        <div class="card">
-                            <div class="row d-flex justify-content-center mt-3 mb-3">
-                                <img src="https://i.imgur.com/Zp3eWm2.png" alt="Logo AdaTech" width=250px height=62px>
+                  <div class="col-md-9">
+                      <div class="card">
+                          <div class="row d-flex justify-content-center mt-3 mb-3">
+                              <img src="https://i.imgur.com/Zp3eWm2.png" alt="Logo AdaTech" width=250px height=62px>
+                          </div>
+
+                          <div class="form-group">
+                              <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.nome" class="form-control"
+                                  type="text" name="nome" id="nome" placeholder="Nome *">
+                          </div>
+
+                          <div class="form-group">
+                              <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.email" class="form-control"
+                                  type="email" name="email" id="email" placeholder="Email (exemplo@exemplo.com) *">
+                          </div>
+
+                          <div class="form-group">
+                              <input (keydown.enter)="cadastrar()" (input)="validarFoto($event)" class="form-control"
+                                  type="text" name="foto" id="foto" placeholder="Link da sua foto">
+                          </div>
+
+                          <div class="form-group">
+                              <input (keydown.enter)="cadastrar()" (input)="confirmSenha($event)" class="form-control"
+                                  type="password" name="senha" id="senha" placeholder="Senha *" minlength="8">
+                          </div>
+
+                          <div class="form-group">
+                              <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.senha" class="form-control"
+                                  type="password" name="confirmaSenha" id="confirmSenha"
+                                  placeholder="Confirme sua senha *" minlength="8">
+                          </div>
+
+                          <div class="form-group">
+                              <select (keydown.enter)="cadastrar()" (change)="tipoUser($event)" class="form-control"
+                                  name="tipo" id="tipo">
+                                  <option value="tipo" disabled selected>Tipo de perfil *</option>
+                                  <option value="Profissional">Estou em busca de colocação profissional</option>
+                                  <option value="Recrutadora">Sou uma recrutadora</option>
+                                  <option value="Admin">Adm</option>
+                              </select>
+
+                          </div>
+
+                          <div class="justify-content-center">
+                            <div *ngIf="tipoUsuario === 'Admin'"  class="form-group">
+                              <input (input)="receberSenhaAdm($event)" type="password" class="form-control" id="titulo"
+                              placeholder="Digite a senha de Adm para realizar o cadastro">
+
+                                <button (click)="validarSenhaAdm()" type="submit"
+                                    class="btn btn-azul roboto text-white mt-3">Confirmar senha de Adm</button>
+
                             </div>
 
-                            <div class="form-group">
-                                <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.nome" class="form-control"
-                                    type="text" name="nome" id="nome" placeholder="Nome *">
-                            </div>
 
-                            <div class="form-group">
-                                <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.email" class="form-control"
-                                    type="email" name="email" id="email" placeholder="Email (exemplo@exemplo.com) *">
-                            </div>
+                          </div>
 
-                            <div class="form-group">
-                                <input (keydown.enter)="cadastrar()" (input)="validarFoto($event)" class="form-control"
-                                    type="text" name="foto" id="foto" placeholder="Link da sua foto">
-                            </div>
-
-                            <div class="form-group">
-                                <input (keydown.enter)="cadastrar()" (input)="confirmSenha($event)" class="form-control"
-                                    type="password" name="senha" id="senha" placeholder="Senha *" minlength="8">
-                            </div>
-
-                            <div class="form-group">
-                                <input (keydown.enter)="cadastrar()" [(ngModel)]="usuario.senha" class="form-control"
-                                    type="password" name="confirmaSenha" id="confirmSenha"
-                                    placeholder="Confirme sua senha *" minlength="8">
-                            </div>
-
-                            <div class="form-group">
-                                <select (keydown.enter)="cadastrar()" (change)="tipoUser($event)" class="form-control"
-                                    name="tipo" id="tipo">
-                                    <option value="tipo" disabled selected>Tipo de perfil *</option>
-                                    <option value="Profissional">Estou em busca de colocação profissional</option>
-                                    <option value="Recrutadora">Sou uma recrutadora</option>
-                                    <option value="Admin" data-toggle="modal" data-target="#confirmarAdm">Admin</option>
-                                </select>
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <button (click)="cadastrar()" type="submit"
-                                    class="btn btn-azul roboto text-white">Começar</button>
-                            </div>
-
-                            <hr class="linha mt-3 mb-3">
-
-                            <p class="text-center text-white mb-3">
-                                Já faz parte da AdaTech? <a routerLink="/login">Faça login.</a>
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-6 mt-5 mb-5">
+                          <div class="d-flex justify-content-center ">
+                            <div>
+                              <button (click)="cadastrar()"  type="submit"
+                                  class="btn btn-azul text-white">Cadastrar</button>
+                          </div>
+                          </div>
 
 
 
-                <div class="row d-flex justify-content-center">
-                    <img src="https://i.imgur.com/bwQDouI.png" alt="imagemCadastro" width="500px" height="500px">
-                </div>
-            </div>
 
-        </div>
-    </div>
+                          <hr class="linha mt-3 mb-3">
+
+                          <p class="text-center text-white mb-3 ">
+                              Já faz parte da AdaTech? <a routerLink="/login">Faça login.</a>
+                          </p>
+
+                      </div>
+
+                  </div>
+
+              </div>
+
+          </div>
+
+          <div class="col-md-6 mt-5 mb-5">
+
+
+
+              <div class="row d-flex justify-content-center">
+                  <img src="https://i.imgur.com/bwQDouI.png" alt="imagemCadastro" width="500px" height="500px">
+              </div>
+          </div>
+
+      </div>
+  </div>
 </div>
 
 
 
-
-<!-- Modal confirmaAdm -->
-
-<div class="modal fade" id="confirmarAdm" tabindex="-1" aria-labelledby="confirmaAdmLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="confirmaAdmLabel">Autenticar admin</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-
-                <div class="form-group">
-                    <input (input)="receberSenhaAdm($event)" type="password" class="form-control" id="titulo"
-                        placeholder="Digite a senha adm">
-                </div>
-
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancelar</button>
-                <button type="button" class="btn btn-success" (click)="validarSenhaAdm()" data-dismiss="modal">Confirmar</button>
-            </div>
-        </div>
-    </div>
-</div>

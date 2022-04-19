@@ -1,7 +1,7 @@
 <div class="fundo">
-    <div class="container mb-5 mt-5 margem-bottom">
+    <div class="container mt-5 ">
 
-        <div class="row">
+        <div class="row ">
             <div class="col-md-12 margem-top ">
                 <h1 class="text-center text-secondary">Apagar postagem</h1>
             </div>
@@ -28,10 +28,10 @@
             </div>
         </div>
 
-        <div class="row mt-5">
-            <div class="col-md-12 d-flex justify-content-center">
-                <button class="btn btn-danger mr-4" [routerLink]="['/minhas-postagens', idUsuario]">Não</button>
-                <button class="btn btn-success" (click)="apagar()">Sim</button>
+        <div class="row mt-5 ">
+            <div class="col-md-12 d-flex justify-content-center margem-bottom">
+                <button class="btn btn-azul text-white mr-4" [routerLink]="['/minhas-postagens', idUsuario]">Não</button>
+                <button class="btn btn-branco mr-4" (click)="apagar()">Sim</button>
             </div>
         </div>
 
